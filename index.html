@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akses Terproteksi</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://i.imgur.com/laXbepg.png') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid white;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      width: 80%;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #00c853;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #00e676;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="https://imgur.com/JrHHB1m.png" class="profile-pic" alt="Foto Profil">
+    <h2>DENDI DENAL</h2>
+    <p>Masukkan password untuk ke link canva</p>
+    <input type="password" id="pass" placeholder="Masukkan Password" />
+    <br />
+    <button onclick="cek()">Masuk</button>
+  </div>
+
+  <script>
+    function cek() {
+      const pw = "canva15"; // Ganti password di sini
+      const userInput = document.getElementById("pass").value;
+      const link = "https://www.canva.com/design/DAGoVS8oTDo/CKGJ6fKck1Ijhk5d4LWBNA/edit?utm_content=DAGoVS8oTDo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"; // Ganti dengan link Canva kamu
+
+      if (userInput === pw) {
+        window.location.href = link;
+      } else {
+        alert("Password salah bro!");
+      }
+    }
+  </script>
+</body>
+</html>
